@@ -24,7 +24,7 @@ const Overview = () => {
     <div>
         <Nav/>
         <Links/>
-        <div className=" mx-12 lg:mx-48 mt-12 flex flex-col md:flex-row lg:flex-row gap-4">
+        <div className=" mx-12 lg:mx-48 mt-5 flex flex-col md:flex-row lg:flex-row gap-4">
             <div className="flex flex-col flex-1">
                 <div className=" w-40 md:w-48 md:h-auto lg:h-auto lg:w-60">
                 <video className="rounded-xl mb-3 object-cover h-full md:h-auto lg:h-auto " muted autoPlay loop>
