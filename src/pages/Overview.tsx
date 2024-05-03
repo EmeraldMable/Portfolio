@@ -13,6 +13,8 @@ import { FaGithub } from "react-icons/fa";
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
+import { Suspense } from "react";
+import Loading from "../components/Loading";
 
 const Overview = () => {
     const [copy , setCopy] = useState(false)
@@ -41,7 +43,7 @@ const Overview = () => {
               {
               
                 projects.map((project) => (
-                    
+                    <Suspense fallback={<Loading/>}>
                        <div className="project-showcase relative mb-2 mx-auto" key={project.id}>
                             <Link to={project.link}>
                             <video className="rounded-md" width='300' key={project.id} muted autoPlay loop >
@@ -50,6 +52,7 @@ const Overview = () => {
                             </Link>
                             <span className="tooltip z-40 absolute bottom-2 -right-10 ">{project.tooltip}</span>
                        </div>
+                    </Suspense>
                 ))
               }
              
