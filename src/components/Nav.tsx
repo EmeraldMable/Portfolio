@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <div className="flex gap-10 mx-20 mb-8 mt-12">
+    <div className="flex flex-col md:flex-row lg:flex-row gap-10 mx-5 md:mx-20 lg:mx-20 mb-8 mt-12">
         
         <Link to='/'>
-        <h1 className='jersey-15-regular text-5xl mb-5 '>
+        <h1 className='jersey-15-regular text-5xl mb-1 md:mb-5 lg:mb-5 text-center md:text-left lg:text-left'>
           <span className="title1">G</span>
           <span className="title2">o</span>
           <span className="title3">o</span>

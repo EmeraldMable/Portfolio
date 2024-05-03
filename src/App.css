@@ -19,6 +19,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .jersey-15-regular {
   font-family: "Jersey 15", sans-serif;
   font-weight: 400;
@@ -97,18 +98,23 @@
 
 /*Link*/
 
-#name{
-  font-size: 1.9rem;
-}
+
 #job{
   font-size: .9rem;
 }
 
 
 /*overview*/
-.overview{
-  padding: 1.5rem 12rem;
+
+.contact{
+  padding: 1rem 12rem;
 }
+
+.view{
+  background-color: #242424;
+  min-height: 300px;
+}
+
 .tooltip{
   display: none;
   background-color: #474747;
@@ -119,6 +125,28 @@
 
 .project-showcase:hover .tooltip{
   display: block;
+}
+/*3d icon*/
+canvas{
+  width: 150px;
+  height: 130px;
+}
+.skill-icon{
+  background-color: rgba(207, 207, 207,.2);
+  backdrop-filter: blur(20px);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tooltipno{
+  display: none;
+}
+.phone-no:hover .tooltipno{
+  display: block;
+  cursor: pointer;
 }
 
 @media (prefers-color-scheme: light) {
@@ -134,6 +162,10 @@
   .icon:hover{
     background-color: rgba(144, 142, 142,.2);
     backdrop-filter: blur(20px);
+  }
+  .view{
+    background-color: #ffffff;
+  
   }
   
 
