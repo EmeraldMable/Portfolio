@@ -21,14 +21,14 @@ const Projects = () => {
           {
             projects.map((project) => (
             
-            <div className="view flex flex-col lg:flex-row gap-5 items-center mt-3" key={project.id}
+            <div className="view flex flex-col lg:flex-row gap-5 items-center justify-start mt-3" key={project.id}
             >
                 <Link to={project.link}  >
-              <video className="rounded-md w-full h-80 mt-1 lg:mt-10"  key={project.id} muted autoPlay loop >
+              <video className="rounded-md w-full h-80 mt-1 lg:mt-10 flex-1"  key={project.id} muted autoPlay loop >
               <source src={project.src} type="video/mp4" />
               </video>
               </Link>
-              <motion.div className="description ml-10 mb-20 lg:mb-2" style={{y}}>
+              <motion.div className="description w-full mt-10  p-6 rounded-xl ml-10 mb-20 lg:mb-2" style={{y}}>
                 <Link to={project.link} className=" hover:underline">
                   <h2 className="libre-baskerville-bold text-xl mb-2">{project.tooltip}</h2></Link>
                 <p className="libre-baskerville-regular tracking-normal text-justify " > {project.description}</p>

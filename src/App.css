@@ -148,11 +148,16 @@ canvas{
   display: block;
   cursor: pointer;
 }
+.description{
+  background-color: rgba(0, 0, 0, .2);
+  backdrop-filter: blur(20px);
+}
 .loader {
   animation: rotate 1s infinite;
   height: 50px;
   width: 50px;
 }
+
 
 .loader:before,
 .loader:after {

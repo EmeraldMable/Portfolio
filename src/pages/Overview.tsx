@@ -24,9 +24,9 @@ const Overview = () => {
     <div>
         <Nav/>
         <Links/>
-        <div className=" mx-12 lg:mx-48 mt-5 flex flex-col md:flex-row lg:flex-row gap-4">
+        <div className=" mx-12 lg:mx-20 mt-5 flex flex-col md:flex-row lg:flex-row gap-4">
             <div className="flex flex-col flex-1">
-                <div className=" w-40 md:w-48 md:h-auto lg:h-auto lg:w-60">
+                <div className=" w-full md:w-48 md:h-auto lg:h-auto lg:w-60">
                 <video className="rounded-xl mb-3 object-cover h-full md:h-auto lg:h-auto " muted autoPlay loop>
                     <source src={profile} />
                 </video>
@@ -39,7 +39,7 @@ const Overview = () => {
                 
             </div>
             <Link to='/projects' className="project-section flex-1 border-2 bg-slate-100 hover:bg-slate-200  dark:hover:bg-white dark:hover:text-black dark:bg-black dark:border-0 rounded-lg pt-5 pl-5  pr-5 flex flex-col">
-            <h2 className="libre-baskerville-regular  mb-6 text-lg text-center">Personal Projects</h2>
+            <h2 className="libre-baskerville-regular mb-6 text-lg text-center">Personal Projects</h2>
               {
               
                 projects.map((project) => (
@@ -58,27 +58,27 @@ const Overview = () => {
              
             </Link >
             <div className="flex flex-col">
-                <div className="flex w-full">
-                    <div className="libre-baskerville-regular flex flex-col pt-5 pb-5 w-1/2 pl-10 pr-2 cursor-pointer hover:bg-slate-200  dark:hover:bg-white dark:hover:text-black  bg-slate-100 dark:bg-black rounded-lg mr-5">
+                <div className="flex flex-col md:flex-row lg:flex-row w-full">
+                    <div className="libre-baskerville-regular flex flex-col pt-5 pb-5 w-full mb-4 md:w-1/2 lg:w-1/2 pl-10 pr-2 cursor-pointer hover:bg-slate-200  dark:hover:bg-white dark:hover:text-black  bg-slate-100 dark:bg-black rounded-lg mr-5">
                         <h2 className=" text-md mb-10 ">Age</h2>
                         <span className="text-xl mb-3">26 years</span>
                         <span className="text-sm">27 July 1997</span>
                     </div>
-                    <div className="flex flex-col pt-5 pb-5 w-1/2 pl-10 pr-2 bg-slate-100 hover:bg-slate-200 cursor-pointer dark:hover:bg-white dark:hover:text-black dark:bg-black rounded-lg">
+                    <div className="flex flex-col pt-5 pb-5 w-full md:w-1/2 lg:w-1/2 pl-10 pr-2 bg-slate-100 hover:bg-slate-200 cursor-pointer dark:hover:bg-white dark:hover:text-black dark:bg-black rounded-lg">
                         <h2 className="libre-baskerville-regular text-md mb-10 ">Height</h2>
                         <span className="text-xl mb-3">5 feet 1 inch</span>
                         <span  className="text-sm">154.94 cm</span>
                     </div>
                 </div>
                 
-                <div className="libre-baskerville-regular pt-5 pb-8 pl-10 pr-2 bg-slate-100 w-full text-center cursor-pointer hover:bg-slate-200 dark:hover:bg-white dark:hover:text-black dark:bg-black rounded-lg mr-5 mt-4">
-                    <h2 className=" text-md mb-3 ">Life Motto</h2>
-                    <span className="libre-baskerville-regular text-2xl">It only takes a minute to finish.</span>
+                <div className="libre-baskerville-regular pt-5 pb-8 pl-3 md:pl-10 lg:pl-10 pr-2 bg-slate-100 w-full text-center cursor-pointer hover:bg-slate-200 dark:hover:bg-white dark:hover:text-black dark:bg-black rounded-lg mr-5 mt-4">
+                    <h2 className=" text-md mb-3">Life Motto</h2>
+                    <span className="libre-baskerville-regular text-xl md:text-2xl lg:text-2xl">It only takes a minute to finish.</span>
                 </div>
-                <div className="libre-baskerville-regular pt-5 pb-8 pl-10 pr-2 bg-slate-100 w-full cursor-pointer hover:bg-slate-200 dark:hover:bg-white dark:hover:text-black dark:bg-black rounded-lg mr-5 mt-4">
-                <h2 className="mb-2 text-lg">Skill Bag</h2>
+                <div className="libre-baskerville-regular pt-5 pb-8 pl-4 md:pl-10 lg:pl-10 pr-2 bg-slate-100 w-full cursor-pointer hover:bg-slate-200 dark:hover:bg-white dark:hover:text-black dark:bg-black rounded-lg mr-5 mt-4">
+                <h2 className="mb-2 text-md md:text-lg lg:text-lg">Skill Bag</h2>
                 <span className="text-sm">Main Core</span>
-                <ul className="flex">
+                <ul className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                     {
                         skillData.map((skill) => (
                             <li className="skill-icon mr-3 lg:mr-5 mt-5 text-md " >{skill.icon}</li>
@@ -89,7 +89,7 @@ const Overview = () => {
             </div>
         </div>
         <div className="mt-10">
-           <div className="border-t-2 mx-12 lg:mx-48 flex-col lg:flex-row  pt-10 flex  gap-5">
+           <div className="border-t-2 mx-12 lg:mx-20 flex-col lg:flex-row  pt-10 flex  gap-5">
            <div className=" w-full">
            <div className=" flex gap-3">
                 
@@ -151,7 +151,7 @@ const Overview = () => {
             
             <div className="border-l-2 pl-5 w-full  lg:w-1/2 mb-10">
                 <h2 className="libre-baskerville-regular">Few More</h2>
-                <div className="flex">
+                <div className="grid grid-cols-3 md:grid-cols-8 lg:grid-cols-4">
                     {
                         UImaterial.map((material) => (
                             <li className="skill-icon mr-5 mt-5 text-md " >{material.icon}</li>
@@ -159,7 +159,7 @@ const Overview = () => {
                     }
                 </div>
                 <h2 className="libre-baskerville-regular mt-5">Backend</h2>
-                <div className="flex border-b-2 pb-5">
+                <div className=" grid grid-cols-3 md:grid-cols-8 lg:grid-cols-4 border-b-2 pb-5">
                     {
                         Backend.map((back) => (
                             <li className="skill-icon mr-5 mt-5 text-md " >{back.icon}</li>
