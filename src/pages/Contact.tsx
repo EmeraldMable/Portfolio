@@ -15,12 +15,13 @@ const Contact = () => {
     <div>
         <Nav/>
         <Links/>
-        <div className="mx-12 lg:mx-48">
+        <div className="mx-12 lg:mx-32 flex flex-col md:flex-row lg:flex-row items-center md:gap-20 lg:gap-20">
           <div className="mt-8 lg:mt-0">
-            <p className="libre-baskerville-regular leading-10"> <span className="libre-baskerville-bold text-3xl tracking-widest">A</span> team player , a responsible and accountable worker , a woman who is eager to expand knowledge in web development 
-            and a collaborative acquaintance wants to be on your team.  </p>
+            <p className="libre-baskerville-regular leading-10 w-full"> A <span className="libre-baskerville-bold text-lg font-bold tracking-widest">team player</span> , a <strong className="libre-baskerville-bold text-lg tracking-widest"> responsible</strong> and  
+            <strong className="libre-baskerville-bold text-lg tracking-widest"> accountable worker</strong> , a woman who is eager to <strong className="libre-baskerville-bold text-lg tracking-widest"> expand knowledge</strong> in web development 
+            and a <strong className="libre-baskerville-bold text-lg tracking-widest"> collaborative acquaintance</strong> wants to be on your team.  </p>
           </div>
-          <div className="mt-2 pt-8 mb-10">
+          <div className="mt-8 pt-2 mb-10 ">
             <h1 className="libre-baskerville-bold text-2xl mb-5">Contact her</h1>
             <div className="phone-no mt-3 flex gap-2 items-center relative">
                 <span><IoPhonePortrait size={28}/></span>

@@ -4,7 +4,11 @@ import { projects, skillData , UImaterial , Backend } from "../data/data"
 import profile from '../assets/profilevd.mp4'
 import { MdOutlineWavingHand } from "react-icons/md";
 import { Link } from "react-router-dom";
-import CV from '../assets/CV4.png'
+import CV from '../assets/cv2.png'
+import photo from '../assets/DV.jpg'
+import chill from '../assets/chill.jpg'
+import asho from '../assets/Asho.jpg'
+import landscape from '../assets/enjoy.jpg'
 import { SiWikipedia } from "react-icons/si";
 import { IoPhonePortrait } from "react-icons/io5";
 import { IoMail } from "react-icons/io5";
@@ -19,17 +23,24 @@ import Loading from "../components/Loading";
 const Overview = () => {
     const [copy , setCopy] = useState(false)
     
-    
   return (
     <div>
         <Nav/>
         <Links/>
         <div className=" mx-12 lg:mx-20 mt-5 flex flex-col md:flex-row lg:flex-row gap-4">
             <div className="flex flex-col flex-1">
-                <div className=" w-full md:w-auto md:h-auto lg:h-auto lg:w-auto">
-                <video className="rounded-xl mb-3 object-cover h-full md:h-auto lg:h-auto " muted autoPlay loop>
-                    <source src={profile} />
-                </video>
+                <div className=" w-full md:w-auto lg:w-auto md:h-auto lg:h-auto">
+                <div className="flex">
+                    <video className=" rounded-s-lg mb-3 w-2/3 object-cover" width='300' muted autoPlay loop>
+                        <source src={profile} />
+                    </video>
+                    <div className="flex flex-col">
+                        <img className="w-full rounded-e-lg mb-3" src={photo} alt="profile photo" />
+                        <img className="w-full rounded-e-lg mb-4" src={chill} alt="photo with a puppy toy" />
+                        <img className="w-full rounded-e-lg mb-4" src={asho} alt="my beloved friends" />
+                        <img className=" rounded-e-lg" src={landscape} alt="enjoying life" />
+                    </div>
+                </div>
                <span className="libre-baskerville-regular text-lg"> Hi Everyone <MdOutlineWavingHand size={20} style={{display:'inline' , marginRight:'4px'}}/> </span>
                 </div>
                
@@ -38,8 +49,8 @@ const Overview = () => {
                 </div>
                 
             </div>
-            <Link to='/projects' className="project-section flex-1 rounded-lg pt-5 pl-5 w-56 max-h-96 pr-5 flex flex-col">
-            <h2 className="libre-baskerville-regular mb-6 text-lg text-center hover:underline">Personal Projects</h2>
+            <Link to='/projects' className="project-section flex-1 rounded-lg pl-5 w-full pr-5 flex flex-col">
+            
               {
               
                 projects.map((project) => (
