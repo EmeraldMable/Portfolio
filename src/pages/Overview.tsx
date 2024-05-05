@@ -26,7 +26,7 @@ const Overview = () => {
         <Links/>
         <div className=" mx-12 lg:mx-20 mt-5 flex flex-col md:flex-row lg:flex-row gap-4">
             <div className="flex flex-col flex-1">
-                <div className=" w-full md:w-48 md:h-auto lg:h-auto lg:w-60">
+                <div className=" w-full md:w-auto md:h-auto lg:h-auto lg:w-auto">
                 <video className="rounded-xl mb-3 object-cover h-full md:h-auto lg:h-auto " muted autoPlay loop>
                     <source src={profile} />
                 </video>
@@ -38,15 +38,15 @@ const Overview = () => {
                 </div>
                 
             </div>
-            <Link to='/projects' className="project-section flex-1 border-2 bg-slate-100 hover:bg-slate-200  dark:hover:bg-white dark:hover:text-black dark:bg-black dark:border-0 rounded-lg pt-5 pl-5  pr-5 flex flex-col">
-            <h2 className="libre-baskerville-regular mb-6 text-lg text-center">Personal Projects</h2>
+            <Link to='/projects' className="project-section flex-1 rounded-lg pt-5 pl-5 w-56 max-h-96 pr-5 flex flex-col">
+            <h2 className="libre-baskerville-regular mb-6 text-lg text-center hover:underline">Personal Projects</h2>
               {
               
                 projects.map((project) => (
                     <Suspense fallback={<Loading/>}>
                        <div className="project-showcase relative mb-2 mx-auto" key={project.id}>
                             <Link to={project.link}>
-                            <video className="rounded-md" width='300' key={project.id} muted autoPlay loop >
+                            <video className="rounded-md w-full" key={project.id} muted autoPlay loop >
                             <source src={project.src} type="video/mp4" />
                             </video>
                             </Link>
@@ -58,15 +58,15 @@ const Overview = () => {
              
             </Link >
             <div className="flex flex-col">
-                <div className="flex flex-col md:flex-row lg:flex-row w-full">
-                    <div className="libre-baskerville-regular flex flex-col pt-5 pb-5 w-full mb-4 md:w-1/2 lg:w-1/2 pl-10 pr-2 cursor-pointer hover:bg-slate-200  dark:hover:bg-white dark:hover:text-black  bg-slate-100 dark:bg-black rounded-lg mr-5">
+                <div className="flex flex-col md:flex-row lg:flex-row w-full ">
+                    <div className="libre-baskerville-regular flex flex-col pt-5 pb-5 w-full mb-4 md:w-1/2 lg:w-1/2 text-center md:text-left lg:text-left md:pl-10 lg:pl-10 pr-2 cursor-pointer hover:bg-slate-200  dark:hover:bg-white dark:hover:text-black  bg-slate-100 dark:bg-black rounded-lg mr-5">
                         <h2 className=" text-md mb-10 ">Age</h2>
                         <span className="text-xl mb-3">26 years</span>
                         <span className="text-sm">27 July 1997</span>
                     </div>
-                    <div className="flex flex-col pt-5 pb-5 w-full md:w-1/2 lg:w-1/2 pl-10 pr-2 bg-slate-100 hover:bg-slate-200 cursor-pointer dark:hover:bg-white dark:hover:text-black dark:bg-black rounded-lg">
-                        <h2 className="libre-baskerville-regular text-md mb-10 ">Height</h2>
-                        <span className="text-xl mb-3">5 feet 1 inch</span>
+                    <div className="flex flex-col pt-5 w-full md:w-1/2 lg:w-1/2 text-center mb-4 md:text-left lg:text-left md:pl-8 lg:pl-8  bg-slate-100 hover:bg-slate-200 cursor-pointer dark:hover:bg-white dark:hover:text-black dark:bg-black rounded-lg">
+                        <h2 className="libre-baskerville-regular text-md mb-10">Height</h2>
+                        <span className="text-xl mb-1">5 feet 1 inch</span>
                         <span  className="text-sm">154.94 cm</span>
                     </div>
                 </div>
