@@ -4,7 +4,7 @@ import { projects, skillData , UImaterial , Backend } from "../data/data"
 import profile from '../assets/profilevd.mp4'
 import { MdOutlineWavingHand } from "react-icons/md";
 import { Link } from "react-router-dom";
-import CV from '../assets/cv2.png'
+import CV from '../assets/CVphoto.png'
 import photo from '../assets/DV.jpg'
 import chill from '../assets/chill.jpg'
 import asho from '../assets/Asho.jpg'
@@ -16,54 +16,52 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import { useState } from "react";
-import { FaLocationDot } from "react-icons/fa6";
 import { Suspense } from "react";
+import Project from "../components/Project";
+import { FaLocationDot } from "react-icons/fa6";
 import Loading from "../components/Loading";
 
 const Overview = () => {
     const [copy , setCopy] = useState(false)
+  
     
   return (
+
     <div>
         <Nav/>
         <Links/>
-        <div className=" mx-12 lg:mx-20 mt-5 flex flex-col md:flex-row lg:flex-row gap-4">
+        <div className=" mx-12 lg:mx-20 mt-5 flex flex-col lg:flex-row gap-4">
             <div className="flex flex-col flex-1">
-                <div className=" w-full md:w-auto lg:w-auto md:h-auto lg:h-auto">
+                <div className=" w-full md:w-[600px] mb-5 md:mx-auto lg:w-auto md:h-auto lg:h-auto">
                 <div className="flex">
                     <video className=" rounded-s-lg mb-3 w-2/3 object-cover" width='300' muted autoPlay loop>
                         <source src={profile} />
                     </video>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col ml-2">
                         <img className="w-full rounded-e-lg mb-3" src={photo} alt="profile photo" />
                         <img className="w-full rounded-e-lg mb-4" src={chill} alt="photo with a puppy toy" />
                         <img className="w-full rounded-e-lg mb-4" src={asho} alt="my beloved friends" />
                         <img className=" rounded-e-lg" src={landscape} alt="enjoying life" />
+                        <div ></div>
                     </div>
                 </div>
                <span className="libre-baskerville-regular text-lg"> Hi Everyone <MdOutlineWavingHand size={20} style={{display:'inline' , marginRight:'4px'}}/> </span>
+                <span className="libre-baskerville-regular text-sm block mt-2">Nice to meet you!</span>
                 </div>
                
-                <div className="flex gap-3 mt-2">
-                <p className="libre-baskerville-regular text-sm">Nice to meet you!</p>        
-                </div>
+                
                 
             </div>
             <Link to='/projects' className="project-section flex-1 rounded-lg pl-5 w-full pr-5 flex flex-col">
-            
+            <h2 className="libre-baskerville-bold text-center mb-2 text-xl hover:underline">Personal Projects</h2>
               {
               
                 projects.map((project) => (
-                    <Suspense fallback={<Loading/>}>
-                       <div className="project-showcase relative mb-2 mx-auto" key={project.id}>
-                            <Link to={project.link}>
-                            <video className="rounded-md w-full" key={project.id} muted autoPlay loop >
-                            <source src={project.src} type="video/mp4" />
-                            </video>
-                            </Link>
-                            <span className="tooltip z-40 absolute bottom-2 -right-10 ">{project.tooltip}</span>
-                       </div>
-                    </Suspense>
+                   <Suspense fallback={<Loading/>}>
+                     <Project divStyle="project-showcase relative mb-2 mx-auto" divKey={project.id} link={project.link} videoStyle="rounded-md w-full" videoKey={project.id}
+                    videoLink={project.src} spanStyle="tooltip z-40 absolute bottom-2 -right-10 " span={project.tooltip}/>
+                    
+                   </Suspense>
                 ))
               }
              
@@ -104,7 +102,7 @@ const Overview = () => {
            <div className=" w-full">
            <div className=" flex gap-3">
                 
-                <div className=" w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center">
+                <div className="w-6 h-6 md:w-10 md:h-10 p-1 md:p-0 lg:p-0 lg:w-10 lg:h-10 rounded-full border-2 border-gray-300 flex items-center justify-center">
                 <SiWikipedia size={25} className="hover:cursor-pointer"/>
                 </div>
                  <div>

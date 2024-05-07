@@ -1,6 +1,6 @@
 import Nav from "../components/Nav"
 import Links from "../components/Links"
-import CVform from '../assets/cv2.png'
+import CVform from '../assets/CVphoto.png'
 import photoshop from '../assets/photoshop-certificate.png'
 import frontend from '../assets/frontend.png'
 import recommend from '../assets/recommendation.png'
