@@ -15,16 +15,21 @@ import { IoMail } from "react-icons/io5";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { CopyToClipboard } from "react-copy-to-clipboard"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Suspense } from "react";
 import Project from "../components/Project";
 import { FaLocationDot } from "react-icons/fa6";
 import Loading from "../components/Loading";
 
+
 const Overview = () => {
     const [copy , setCopy] = useState(false)
-  
-    
+    const [loading, setLoading] = useState(true)
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        },5000)
+    },[])
   return (
 
     <div>
@@ -34,9 +39,13 @@ const Overview = () => {
             <div className="flex flex-col flex-1">
                 <div className=" w-full md:w-[600px] mb-5 md:mx-auto lg:w-auto md:h-auto lg:h-auto">
                 <div className="flex">
+                   {
+                    loading ? <div className=" w-72"><Loading/></div>
+                    :
                     <video className=" rounded-s-lg mb-3 w-2/3 object-cover" width='300' muted autoPlay loop>
-                        <source src={profile} />
-                    </video>
+                    <source src={profile} />
+                </video>
+                   }
                     <div className="flex flex-col ml-2">
                         <img className="w-full rounded-e-lg mb-3" src={photo} alt="profile photo" />
                         <img className="w-full rounded-e-lg mb-4" src={chill} alt="photo with a puppy toy" />
